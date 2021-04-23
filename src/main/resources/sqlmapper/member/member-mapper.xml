@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myproject.member.mapper.MemberMapper">
+	<select id="duplicateCheck" resultType="int">
+		SELECT 
+			COUNT(*) 
+		FROM 
+			TB_MEMBER 
+		WHERE 
+			USERID=#{userId} 
+	</select>
+	
+	<insert id="memberJoin" parameterType="MemberVO" >
+		INSERT INTO TB_MEMBER(USERID,USERPW,USERNM,USERPH,ZIPCODE,ADDR1,ADDR2) 
+		VALUES (#{userId},#{userPw},#{userNm},#{userPh},#{zipCode},#{addr1},#{addr2})
+	</insert>
+	
+	<select id="loginOk" parameterType="MemberVO" resultType="MemberVO">
+		SELECT 
+			*
+		FROM 
+			TB_MEMBER 
+		WHERE 
+			USERID=#{userId} 
+	</select>
+</mapper>
