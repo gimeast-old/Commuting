@@ -16,6 +16,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	 <typeAliases>
 	 	<typeAlias alias="MemberVO" type="com.myproject.member.vo.MemberVO" />
+	 	<typeAlias alias="CompanyVO" type="com.myproject.admin.vo.CompanyVO" />
 	 </typeAliases>
  
 </configuration>

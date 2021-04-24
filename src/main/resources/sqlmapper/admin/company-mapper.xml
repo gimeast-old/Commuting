@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myproject.admin.mapper.CompanyMapper">
+
+	
+	<insert id="companyReg" parameterType="CompanyVO">
+		insert into tb_company (idx,companyNm,companyX,companyY,companyAddr1,companyCEO) 
+		values (idx_seq.nextval,#{companyNm},#{companyX},#{companyY},#{companyAddr1},#{companyCEO})
+	</insert>
+	
+	<select id="companySelectAll" resultType="CompanyVO">
+		select * from tb_company
+	</select>
+</mapper>

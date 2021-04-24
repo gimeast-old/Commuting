@@ -17,6 +17,13 @@
 	<logger name="com.myproject.member">
 		<level value="info" />
 	</logger>
+	<logger name="com.myproject.admin">
+		<level value="info" />
+	</logger>
+	<logger name="com.myproject.manager">
+		<level value="info" />
+	</logger>
+	
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
