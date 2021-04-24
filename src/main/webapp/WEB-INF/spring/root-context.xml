@@ -25,7 +25,7 @@
 	<!-- enable use-expressions -->
 	<security:http auto-config="true" use-expressions="false">
 		<security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
-		
+		<security:intercept-url pattern="/manager/**" access="ROLE_USER,ROLE_ADMIN" />
 		<!-- access denied page -->
 		<security:access-denied-handler error-page="/403" />
 		<security:form-login 

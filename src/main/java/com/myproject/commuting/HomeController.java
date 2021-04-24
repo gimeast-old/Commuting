@@ -20,11 +20,9 @@ public class HomeController {
 	public String home(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
-		boolean isAuth = auth.isAuthenticated(); // 로그인여부확인
 		String userId = auth.getName();
-		logger.info("userId:{}",userId);
 		
-		model.addAttribute("isAuth",isAuth);
+		model.addAttribute("authorities",auth.getAuthorities());
 		model.addAttribute("userId",userId);
 		return "home";
 	}

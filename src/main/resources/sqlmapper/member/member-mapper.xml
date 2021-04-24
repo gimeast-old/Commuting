@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.myproject.member.mapper.MemberMapper">
-	<select id="duplicateCheck" resultType="int">
+	<select id="duplicateCheck" parameterType="String" resultType="int">
 		SELECT 
 			COUNT(*) 
 		FROM 

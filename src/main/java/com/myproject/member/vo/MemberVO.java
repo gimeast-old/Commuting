@@ -9,6 +9,8 @@ public class MemberVO {
 	private String addr1;
 	private String addr2;
 	private String useYn;
+	private String companyNm;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -57,13 +59,18 @@ public class MemberVO {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
+	
+	public String getCompanyNm() {
+		return companyNm;
+	}
+	public void setCompanyNm(String companyNm) {
+		this.companyNm = companyNm;
+	}
 	@Override
 	public String toString() {
 		return "MemberVO [userId=" + userId + ", userPw=" + userPw + ", userNm=" + userNm + ", userPh=" + userPh
-				+ ", zipCode=" + zipCode + ", addr1=" + addr1 + ", addr2=" + addr2 + ", useYn=" + useYn + "]";
+				+ ", zipCode=" + zipCode + ", addr1=" + addr1 + ", addr2=" + addr2 + ", useYn=" + useYn + ", companyNm="
+				+ companyNm + "]";
 	}
 
-	
-	
-	
 }
