@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.myproject.admin.vo.CompanyVO;
 import com.myproject.manager.service.CommutingService;
 import com.myproject.member.vo.MemberVO;
 
@@ -24,14 +25,20 @@ public class CommutingManagerController {
 	
 	@GetMapping(value = "/commuting")
 	public String commuting(Model model) {
+		logger.info("/manager/commuting");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
 		String userId = auth.getName();
 		
-		MemberVO vo = commutingService.selectMemberInfo(userId);
+		MemberVO memberVO = commutingService.selectMemberInfo(userId);
+		String companyNm = memberVO.getCompanyNm();
 		
-		model.addAttribute("userId",userId);
-		model.addAttribute("companyNm",vo.getCompanyNm());
+		CompanyVO companyVO = commutingService.selectCompanyByNm(companyNm);
+
+		model.addAttribute("userId", userId);
+		model.addAttribute("companyNm", companyNm);
+		model.addAttribute("companyVO", companyVO);
+		
 		return "manager/commuting";
 	}
 	
