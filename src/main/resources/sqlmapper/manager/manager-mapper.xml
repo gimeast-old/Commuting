@@ -13,4 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			USERID=#{userId} 
 	</select>
 	
+	<select id="selectCompanyByNm" parameterType="String" resultType="CompanyVO">
+		SELECT * FROM TB_COMPANY WHERE COMPANYNM=#{companyNm}
+	</select>
 </mapper>

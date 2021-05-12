@@ -89,11 +89,22 @@ function submitBtn() {
 	if(userId.length == 0) {
 		location.href="${pageContext.request.contextPath}/member/login";
 	}else {
-		$('#lat').val(lat);
-		$('#lon').val(lon);
+		var companyX = '${companyVO.companyX }';
+		var companyY = '${companyVO.companyY }';
 		
-		var frm = $('#frm');
-		frm.submit();
+		// 출퇴근 입력 가능 범위
+		if(companyY > (lat-0.001) && companyY < (lat+0.001) && companyX > (lon-0.001) && companyX < (lon+0.001)) {
+			$('#lat').val(lat);
+			$('#lon').val(lon);
+			
+			var frm = $('#frm');
+			frm.submit();
+			
+		}else {
+			alert('입력할수없는 위치입니다.');
+			return ;
+		}
+
 	}
 }
 	
